@@ -12,7 +12,7 @@ angular.module('myApp.view1', ['ngRoute', 'ngMessages', 'ngResource'])
 }
 ])
     .controller('View1Ctrl', ['$scope',function($scope) {
-      $scope.name="gokhan"
-console.log($scope)
+        $scope.name="gokhan";
+        console.log($scope)
 }]);
 
