@@ -11,8 +11,11 @@ angular.module('myApp.view2', ['ngRoute'])
 
 }])
 
-.controller('View2Ctrl', [function($log) {
-
+.controller('View2Ctrl', ['$scope', 'cityService',function($scope, cityService){
+      $scope.name= cityService.city;
+      $scope.$watch('name', function() {
+        cityService.city = $scope.name;
+      })
 }]
 );
 
