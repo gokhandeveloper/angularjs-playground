@@ -29,10 +29,12 @@ angular.module('myApp.view2', ['ngRoute', 'ngResource'])
 
     $scope.openWeather =
         $resource(openWeatherApi.url + "/" + openWeatherApi.version
-            + "/" + "weather" + "?q=" + $scope.name + "&appid=" + openWeatherApi.appid + "&units" + openWeatherApi.units
+            + "/" + "weather" + "?q=" + $scope.name + "&appid=" + openWeatherApi.appid + "&units=" + openWeatherApi.units
         );
-      $scope.results =  $scope.openWeather.get();
-      console.log($scope.results);
+      $scope.results =  $scope.openWeather.get().$promise;
+      $scope.results.then(callback => {
+          $scope.temperature = callback.main.temp
+      })
 }]
 );
 
