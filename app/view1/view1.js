@@ -39,5 +39,5 @@ var myApp= angular.module('myApp.view1', ['ngRoute', 'ngMessages', 'ngResource']
 
 myApp.service('cityService', function() {
     console.log("service in view1");
-    this.city = "default";
+    this.city = "Please enter city name";
 })
