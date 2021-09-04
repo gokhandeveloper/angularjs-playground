@@ -12,28 +12,11 @@ var myApp= angular.module('myApp.view1', ['ngRoute', 'ngMessages', 'ngResource']
 }
 ])
     .controller('View1Ctrl', ['$scope', 'cityService',function($scope, cityService) {
-     //   $scope.name="gokhan";
-     //   console.log($scope)
-    //    console.log("sasad")
-        // var hello = document.getElementById("name");
-        // console.log(hello)
-        // hello.addEventListener("keypress", function(event){
-        //     console.log("pressed")
-        // })
-        //
-        // $scope.$watch("name", function(newv, oldv) {
-        //     console.log(oldv)
-        //     console.log(newv)
-        // })
-        //
-        // //directives
-        // $scope.characters = 5;
-
-     //   console.log(cityService)
         $scope.name= cityService.city;
         $scope.$watch('name', function() {
             cityService.city = $scope.name;
         })
+
 
     }]);
 
