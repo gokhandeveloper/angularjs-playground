@@ -11,11 +11,15 @@ var myApp= angular.module('myApp.view1', ['ngRoute', 'ngMessages', 'ngResource']
 
 }
 ])
-    .controller('View1Ctrl', ['$scope', 'cityService',function($scope, cityService) {
+    .controller('View1Ctrl', ['$scope', '$location' ,'cityService',function($scope, $location, cityService) {
         $scope.name= cityService.city;
         $scope.$watch('name', function() {
             cityService.city = $scope.name;
         })
+
+        $scope.submit = function() {
+            $location.path("/view2")
+        }
 
 
     }]);

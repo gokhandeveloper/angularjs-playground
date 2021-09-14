@@ -1,0 +1,12 @@
+
+p {
+    font-weight: bolder;
+    margin:20px;
+}
+
+.box {
+  background: gold;
+    width: 100%;
+    height:50vh;
+
+}
